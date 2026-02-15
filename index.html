@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashan Virantha - Design & Production Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid #00e5ff;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .name .first {
+            color: #ffffff;
+        }
+
+        .name .last {
+            color: #00e5ff;
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #ffffff;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards 0.5s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Contact Bar */
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+            background: #f5f5f5;
+            flex-wrap: wrap;
+            animation: slideUp 1s ease forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* License Banner */
+        .license-banner {
+            background: #00e5ff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: bounceIn 1s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .license-banner:hover {
+            background: #00d4e6;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: white;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .section-title.animate {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-title::before {
+            content: '━━━ ';
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: #00e5ff;
+            border-radius: 3px;
+        }
+
+        /* Who I Am Section */
+        .intro {
+            margin-bottom: 60px;
+        }
+
+        .intro-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            opacity: 0;
+        }
+
+        .intro-text.animate {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .intro-subtext {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+            opacity: 0;
+        }
+
+        .intro-subtext.animate {
+            animation: fadeIn 1s ease forwards 0.3s;
+        }
+
+        /* Achievement Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            padding: 40px 30px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .card.animate {
+            animation: cardSlideUp 0.8s ease forwards;
+        }
+
+        @keyframes cardSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            transition: height 0.3s ease;
+        }
+
+        .card:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-projects {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .card-projects::before {
+            background: #ff6b35;
+        }
+
+        .card-scale {
+            background: #fff3e0;
+        }
+
+        .card-scale::before {
+            background: #ff9800;
+        }
+
+        .card-brands {
+            background: #e8f5e9;
+        }
+
+        .card-brands::before {
+            background: #4caf50;
+        }
+
+        .card-current {
+            background: #e1f5fe;
+            grid-column: 1 / -1;
+        }
+
+        .card-current::before {
+            background: #03a9f4;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .skill-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid #00e5ff;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .skill-box.animate {
+            animation: scaleIn 0.6s ease forwards;
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+            border-top-width: 6px;
+        }
+
+        .skill-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Experience Timeline */
+        .experience {
+            margin-bottom: 60px;
+        }
+
+        .job {
+            margin-bottom: 50px;
+            padding-left: 30px;
+            border-left: 4px solid #00e5ff;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .job.animate {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .job::before {
+            content: '●';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            color: #00e5ff;
+            font-size: 1.5em;
+            animation: ping 2s ease infinite;
+        }
+
+        @keyframes ping {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .job-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .current-badge {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.6em;
+            margin-left: 10px;
+            animation: pulse 2s ease infinite;
+        }
+
+        .job-company {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .job-details {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-details li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            font-size: 1.05em;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .job-details li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: bounceIn 1s ease, float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .education-languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 6px solid #00e5ff;
+        }
+
+        .footer-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #00e5ff;
+        }
+
+        .footer-item {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .footer-item strong {
+            color: white;
+        }
+
+        /* Scroll Animations */
+        .hidden {
+            opacity: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-current {
+                grid-column: 1;
+            }
+
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5em;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: #00e5ff;
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff; }
+            50% { text-shadow: 0 0 40px #00e5ff, 0 0 80px #00e5ff; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-text">AV</div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1 class="name">
+                <span class="first">ASHAN</span>
+                <span class="last">VIRANTHA</span>
+            </h1>
+            <p class="tagline">GRAPHIC DESIGN & PRODUCTION SPECIALIST</p>
+        </div>
+    </div>
+
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+        <div class="contact-item">
+            <span>📍</span>
+            <span>Dubai, Deira</span>
+        </div>
+        <div class="contact-item">
+            <span>📞</span>
+            <span>+971 52 418 6102</span>
+        </div>
+        <div class="contact-item">
+            <span>✉</span>
+            <span>ashan.uae.123@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- License Banner -->
+    <div class="license-banner" onclick="sendWhatsApp()">
+        🚗 UAE DRIVING LICENSE
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Who I Am -->
+        <section class="intro">
+            <h2 class="section-title hidden">WHO I AM</h2>
+            <p class="intro-text hidden">5+ years transforming bold ideas into stunning reality.</p>
+            <p class="intro-subtext hidden">I don't just design—I deliver results that make brands stand out.</p>
+        </section>
+
+        <!-- Achievement Cards -->
+        <div class="cards-grid">
+            <div class="card card-projects hidden">
+                <div class="card-title">🎯 WORLD-CLASS PROJECTS</div>
+                <div class="card-content">
+                    Warner Brothers Theme Park • Ferrari World • Formula 1<br>
+                    Water World • Sea World • Capital Motion • W Hotel
+                </div>
+            </div>
+            <div class="card card-scale hidden">
+                <div class="card-title">📊 MASSIVE SCALE</div>
+                <div class="card-content">
+                    350+ print rolls weekly<br>
+                    6 large format printers<br>
+                    Carrefour campaigns
+                </div>
+            </div>
+            <div class="card card-brands hidden">
+                <div class="card-title">🏆 PREMIUM BRANDS</div>
+                <div class="card-content">
+                    Nike advertising<br>
+                    Adidas campaigns<br>
+                    SSS brand displays
+                </div>
+            </div>
+            <div class="card card-current hidden">
+                <div class="card-title">🎨 CURRENT ROLE</div>
+                <div class="card-content">
+                    Managing 3M window tint film pre-cutting section + Marketing design at Safa Automotive
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <section>
+            <h2 class="section-title hidden">WHAT I BRING TO THE TABLE</h2>
+            <div class="skills-grid">
+                <div class="skill-box hidden">
+                    <div class="skill-title">DESIGN SOFTWARE</div>
+                    <div class="skill-list">
+                        Illustrator • Photoshop • Premiere Pro<br>
+                        SketchUp • Canva • AI Tools
+                    </div>
+                </div>
+                <div class="skill-box hidden">
+                    <div class="skill-title">PRODUCTION TECH</div>
+                    <div class="skill-list">
+                        Large Format Printing (Solvent/Eco-Solvent/UV)<br>
+                        CNC & Laser Cutting • 3M Window Film
+                    </div>
+                </div>
+                <div class="skill-box hidden">
+                    <div class="skill-title">TECHNICAL SKILLS</div>
+                    <div class="skill-list">
+                        Technical Drawing • 3D Design<br>
+                        Cutting File Creation
+                    </div>
+                </div>
+                <div class="skill-box hidden">
+                    <div class="skill-title">MANAGEMENT</div>
+                    <div class="skill-list">
+                        Team Leadership • Print Workflow<br>
+                        Quality Control • Multi-Printer Operations
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="experience">
+            <h2 class="section-title hidden">CAREER HIGHLIGHTS</h2>
+            
+            <div class="job hidden">
+                <div class="job-title">
+                    PPF Tint Pre-Cutting Supervisor & Designer
+                    <span class="current-badge">CURRENT</span>
+                </div>
+                <div class="job-company">Safa Automotive</div>
+                <ul class="job-details">
+                    <li>Manage 3M window tint film pre-cutting section with CNC precision</li>
+                    <li>Design marketing materials for automotive services</li>
+                    <li>Lead design team ensuring quality and timely delivery</li>
+                </ul>
+            </div>
+
+            <div class="job hidden">
+                <div class="job-title">Graphic Designer & Team Supervisor</div>
+                <div class="job-company">Sanable Digital LLC</div>
+                <ul class="job-details">
+                    <li>Delivered design for Warner Brothers Theme Park, Ferrari World, F1, Water World, Sea World, Capital Motion, W Hotel</li>
+                    <li>Ran Carrefour's weekly campaigns: 350+ print rolls across 6 large format printers</li>
+                    <li>Executed Nike, SSS, and Adidas advertising (standees and displays)</li>
+                    <li>Operated CNC machines and supervised design team</li>
+                </ul>
+            </div>
+
+            <div class="job hidden">
+                <div class="job-title">Graphic Designer & CNC Laser Operator</div>
+                <div class="job-company">Retinor Advertising LLC, Abu Dhabi</div>
+                <ul class="job-details">
+                    <li>Designed marketing materials and operated CNC laser machines for signage production</li>
+                </ul>
+            </div>
+
+            <div class="job hidden">
+                <div class="job-title">Graphic Designer & Printing Operator</div>
+                <div class="job-company">Solid Advertising</div>
+                <ul class="job-details">
+                    <li>Managed large format printing projects and produced advertising materials</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="education-languages">
+            <div class="footer-section">
+                <div class="footer-title">EDUCATION</div>
+                <div class="footer-item"><strong>Graphic Design Diploma</strong></div>
+                <div class="footer-item" style="color: #999;">2011</div>
+                <div class="footer-item" style="margin-top: 20px;"><strong>High School Diploma</strong></div>
+                <div class="footer-item" style="color: #999;">2016</div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-title">LANGUAGES</div>
+                <div class="footer-item">▸ English</div>
+                <div class="footer-item">▸ Hindi</div>
+                <div class="footer-item">▸ Sinhala</div>
+            </div>
+        </div>
+        <p style="font-size: 1.1em; color: #999;">© 2025 Ashan Virantha. All rights reserved.</p>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="sendWhatsApp()" title="Contact me on WhatsApp">
+        💬
+    </div>
+
+    <script>
+        // Hide loader when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                        entry.target.classList.remove('hidden');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all hidden elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach(el => observer.observe(el));
+        });
+
+        // WhatsApp function
+        function sendWhatsApp() {
+            const phoneNumber = '971524186102'; // Your WhatsApp number (country code + number, no + or spaces)
+            const message = encodeURIComponent('Hi Ashan! I visited your portfolio and would like to connect with you.');
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Easter egg: Click on name 5 times for special effect
+        let clickCount = 0;
+        document.querySelector('.name').addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 5) {
+                document.body.style.animation = 'rainbow 2s ease';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                    clickCount = 0;
+                }, 2000);
+            }
+        });
+
+        // Add parallax effect to header
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header');
+            if (header) {
+                header.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
