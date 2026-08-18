@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashan Virantha - Design & Production Specialist</title>
-    <!-- web app manifest -->
-    <link rel="manifest" href="manifest.json">
+    <title>Ashan Virantha - Freelance Design & Production Specialist</title>
     <style>
         * {
             margin: 0;
@@ -49,6 +47,33 @@
         .header-content {
             position: relative;
             z-index: 1;
+        }
+
+        .hero-profile {
+            width: 132px;
+            height: 132px;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            border: 4px solid #00e5ff;
+            background: linear-gradient(135deg, #303030, #171717);
+            color: #b6b6b6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 18px;
+            font-size: 0.85em;
+            font-weight: 600;
+            line-height: 1.35;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
+        }
+
+        .hero-profile img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .name {
@@ -552,125 +577,110 @@
             line-height: 1.6;
         }
 
-        /* Portfolio Gallery Page */
+        /* Portfolio Page */
         .gallery-header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .upload-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            border: 3px dashed #00e5ff;
-            text-align: center;
-        }
-
-        .upload-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: left;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            color: #333;
-            font-size: clamp(0.95em, 2.5vw, 1.05em);
-        }
-
-        .form-group input {
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: clamp(0.9em, 2.2vw, 1em);
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #00e5ff;
-        }
-
-        .submit-btn {
-            background: #00e5ff;
-            color: #1a1a1a;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: clamp(1em, 2.5vw, 1.1em);
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #00d4e6;
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0, 229, 255, 0.3);
-        }
-
-        .toggle-upload-btn {
-            background: #1a1a1a;
-            color: #00e5ff;
-            padding: 12px 25px;
-            border: 2px solid #00e5ff;
-            border-radius: 8px;
-            font-size: clamp(0.95em, 2.5vw, 1em);
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .toggle-upload-btn:hover {
-            background: #00e5ff;
-            color: #1a1a1a;
-        }
-
-        .gallery-grid {
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 30px;
         }
 
-        .gallery-item {
+        .project-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            border-top: 5px solid #00e5ff;
         }
 
-        .gallery-item:hover {
+        .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 229, 255, 0.3);
         }
 
-        .gallery-image {
+        .project-image-placeholder {
             width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            background: #f8f9fa;
+            min-height: 190px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #52606b;
+            font-weight: 600;
+            background: linear-gradient(135deg, #eafcff, #f8f9fa);
+            border-bottom: 1px solid #dceef2;
         }
 
-        .gallery-caption {
-            padding: 15px;
-            font-size: clamp(0.9em, 2.2vw, 1em);
-            color: #555;
-            text-align: center;
+        .project-image {
+            width: 100%;
+            height: 190px;
+            display: block;
+            object-fit: cover;
             background: #f8f9fa;
+            border-bottom: 1px solid #dceef2;
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            color: #1a1a1a;
+            font-size: 1.25em;
+            margin-bottom: 18px;
+        }
+
+        .case-study-row {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.55;
+            padding: 10px 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .case-study-row strong {
+            display: block;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+        }
+
+        .project-link-placeholder {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 12px;
+            color: #1a1a1a;
+            background: #eafcff;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .professional-links {
+            max-width: 1200px;
+            margin: 0 auto 25px;
+            padding: 0 20px;
+        }
+
+        .professional-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .professional-links a:hover {
+            color: #00e5ff;
+        }
+
+        .link-placeholder {
+            color: #999;
+            font-size: clamp(0.9em, 2.2vw, 1em);
+            display: block;
+            margin-top: 4px;
         }
 
         /* WhatsApp Button */
@@ -741,7 +751,7 @@
                 gap: 20px;
             }
 
-            .gallery-grid {
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -792,17 +802,17 @@
     <div class="nav">
         <a href="#" onclick="showPage('home')" class="nav-link active" data-page="home">Home</a>
         <a href="#" onclick="showPage('portfolio')" class="nav-link" data-page="portfolio">Portfolio</a>
-        <a href="webapp.html" class="nav-link">App</a>
     </div>
 
     <!-- Header -->
     <div class="header">
         <div class="header-content">
+            <div class="hero-profile"><img src="https://i.ibb.co/Z12Vzsmf/Screenshot-20250306-095433-Whats-App.avif" alt="Ashan Virantha"></div>
             <h1 class="name">
                 <span class="first">ASHAN</span>
                 <span class="last">VIRANTHA</span>
             </h1>
-            <p class="tagline">Design & Production Specialist | 5+ Years Experience</p>
+            <p class="tagline">Freelance Design &amp; Production Specialist helping brands turn ideas into production-ready visual solutions.</p>
         </div>
     </div>
 
@@ -867,31 +877,31 @@
 
             <!-- Skills -->
             <section>
-                <h2 class="section-title hidden">WHAT I BRING TO THE TABLE</h2>
+                <h2 class="section-title hidden">FREELANCE SERVICES &amp; SKILLS</h2>
                 <div class="skills-grid">
                     <div class="skill-box hidden">
-                        <div class="skill-title">DESIGN SOFTWARE</div>
+                        <div class="skill-title">GRAPHIC DESIGN &amp; CONTENT</div>
                         <div class="skill-list">
                             Illustrator • Photoshop • Premiere Pro<br>
                             SketchUp • Canva • AI Tools
                         </div>
                     </div>
                     <div class="skill-box hidden">
-                        <div class="skill-title">PRODUCTION TECH</div>
+                        <div class="skill-title">PRINT &amp; SIGNAGE PRODUCTION</div>
                         <div class="skill-list">
                             Large Format Printing (Solvent/Eco-Solvent/UV)<br>
                             CNC & Laser Cutting • 3M Window Film
                         </div>
                     </div>
                     <div class="skill-box hidden">
-                        <div class="skill-title">TECHNICAL SKILLS</div>
+                        <div class="skill-title">TECHNICAL DESIGN SUPPORT</div>
                         <div class="skill-list">
                             Technical Drawing • 3D Design<br>
                             Cutting File Creation
                         </div>
                     </div>
                     <div class="skill-box hidden">
-                        <div class="skill-title">MANAGEMENT</div>
+                        <div class="skill-title">PRODUCTION COORDINATION</div>
                         <div class="skill-list">
                             Team Leadership • Print Workflow<br>
                             Quality Control • Multi-Printer Operations
@@ -973,33 +983,38 @@
     <div id="portfolio" class="page">
         <div class="container">
             <div class="gallery-header">
-                <h2 class="section-title">MY DESIGN PORTFOLIO</h2>
-                <button class="toggle-upload-btn" onclick="toggleUpload()">Add New Design</button>
+                <h2 class="section-title">SELECTED WORK</h2>
+                <p class="intro-subtext" style="opacity: 1;">A selection of design and production work drawn from my professional experience. Replace each image and live-link placeholder with approved project material.</p>
             </div>
 
-            <!-- Upload Section -->
-            <div class="upload-section" id="uploadSection" style="display: none;">
-                <h3 style="margin-bottom: 20px; color: #1a1a1a;">Upload Your Design</h3>
-                <form class="upload-form" onsubmit="addImage(event)">
-                    <div class="form-group">
-                        <label for="imageUrl">Image URL:</label>
-                        <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" required>
+            <div class="portfolio-grid">
+                <article class="project-card">
+                    <img src="https://i.ibb.co/R4Gz4Pb7/place-horder-1-theem-park.png" alt="Theme park and entertainment graphics project" class="project-image">
+                    <div class="project-content"><h3 class="project-title">Theme Park &amp; Entertainment Graphics</h3>
+                        <div class="case-study-row"><strong>Problem</strong>Project brief and measurable outcome to be added from approved project records.</div>
+                        <div class="case-study-row"><strong>Process</strong>Delivered design work for Warner Brothers Theme Park, Ferrari World, Formula 1, Water World, Sea World, Capital Motion and W Hotel.</div>
+                        <div class="case-study-row"><strong>Tools / Skills</strong>Graphic design, large-format production and team supervision.</div>
+                        <div class="case-study-row"><strong>Result</strong>Add verified project result or client-approved testimonial.</div>
                     </div>
-                    <div class="form-group">
-                        <label for="imageCaption">Caption (Optional):</label>
-                        <input type="text" id="imageCaption" placeholder="Describe your design...">
+                </article>
+                <article class="project-card">
+                    <img src="https://i.ibb.co/nNY17Qrn/placeholder-2-carryfour.png" alt="Carrefour weekly campaign production project" class="project-image">
+                    <div class="project-content"><h3 class="project-title">Carrefour Weekly Campaign Production</h3>
+                        <div class="case-study-row"><strong>Problem</strong>Support recurring campaign production at scale.</div>
+                        <div class="case-study-row"><strong>Process</strong>Ran weekly campaigns across six large-format printers.</div>
+                        <div class="case-study-row"><strong>Tools / Skills</strong>Print workflow, large-format printing and quality control.</div>
+                        <div class="case-study-row"><strong>Result</strong>350+ print rolls produced weekly.</div>
                     </div>
-                    <button type="submit" class="submit-btn">Add to Portfolio</button>
-                </form>
-            </div>
-
-            <!-- Gallery -->
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Gallery items will be added here dynamically -->
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300/00e5ff/1a1a1a?text=Add+Your+First+Design" alt="Placeholder" class="gallery-image">
-                    <div class="gallery-caption">Click "Add New Design" to upload your work</div>
-                </div>
+                </article>
+                <article class="project-card">
+                    <img src="https://i.ibb.co/gZ1nsq3H/placeholder-3-sss-niky.png" alt="Nike, SSS and Adidas brand displays project" class="project-image">
+                    <div class="project-content"><h3 class="project-title">Nike, SSS &amp; Adidas Brand Displays</h3>
+                        <div class="case-study-row"><strong>Problem</strong>Project brief and display requirements to be added from approved records.</div>
+                        <div class="case-study-row"><strong>Process</strong>Executed advertising materials including standees and displays.</div>
+                        <div class="case-study-row"><strong>Tools / Skills</strong>Graphic design, cutting file creation and production coordination.</div>
+                        <div class="case-study-row"><strong>Result</strong>Add verified project result.</div>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
@@ -1022,6 +1037,13 @@
                 <div class="footer-item">▸ English</div>
                 <div class="footer-item">▸ Hindi</div>
                 <div class="footer-item">▸ Sinhala</div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-title">PROFESSIONAL LINKS</div>
+                <div class="footer-item"><a href="https://www.upwork.com/freelancers/~01b0028ac74b4a652d" target="_blank" rel="noopener noreferrer">Upwork</a></div>
+                <div class="footer-item"><a href="https://www.fiverr.com/ashanuae1995/buying?source=avatar_menu_profile" target="_blank" rel="noopener noreferrer">Fiverr</a></div>
+                <div class="footer-item"><a href="https://github.com/Ashan999" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+                <div class="footer-item"><a href="https://www.linkedin.com/in/ashan-virantha-944b9963/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
             </div>
         </div>
         <p style="font-size: 1.1em; color: #999;">© 2025 Ashan Virantha. All rights reserved.</p>
@@ -1090,54 +1112,6 @@
             const message = encodeURIComponent('Hi Ashan! I visited your portfolio and would like to connect with you.');
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappURL, '_blank');
-        }
-
-        // Toggle upload section
-        function toggleUpload() {
-            const uploadSection = document.getElementById('uploadSection');
-            const btn = document.querySelector('.toggle-upload-btn');
-            
-            if (uploadSection.style.display === 'none') {
-                uploadSection.style.display = 'block';
-                btn.textContent = 'Hide Upload Form';
-            } else {
-                uploadSection.style.display = 'none';
-                btn.textContent = 'Add New Design';
-            }
-        }
-
-        // Add image to gallery
-        function addImage(event) {
-            event.preventDefault();
-            
-            const imageUrl = document.getElementById('imageUrl').value;
-            const imageCaption = document.getElementById('imageCaption').value || 'Design Work';
-            const galleryGrid = document.getElementById('galleryGrid');
-            
-            // Remove placeholder if it exists
-            if (galleryGrid.children.length === 1 && galleryGrid.children[0].querySelector('img').src.includes('placeholder')) {
-                galleryGrid.innerHTML = '';
-            }
-            
-            // Create new gallery item
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <img src="${imageUrl}" alt="${imageCaption}" class="gallery-image" onerror="this.src='https://via.placeholder.com/400x300/ff6b6b/ffffff?text=Image+Not+Found'">
-                <div class="gallery-caption">${imageCaption}</div>
-            `;
-            
-            galleryGrid.appendChild(galleryItem);
-            
-            // Reset form
-            document.getElementById('imageUrl').value = '';
-            document.getElementById('imageCaption').value = '';
-            
-            // Hide upload section
-            toggleUpload();
-            
-            // Scroll to new image
-            galleryItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         // Smooth scrolling
